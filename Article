@@ -1,0 +1,306 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Interstellar-X</title>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/1.12.1/jquery.min.js"></script>
+<link rel="stylesheet" href="https://cdn.staticfile.org/font-awesome/4.7.0/css/font-awesome.css">
+<style>
+* {
+  box-sizing: border-box;
+}
+ 
+body {
+  font-family: Arial;
+  padding: 10px;
+  background: #333;
+}
+
+h1
+{
+	text-shadow: 10px 10px 10px rgb(0,0,0);
+}
+
+/* 头部标题 */
+.header {
+  padding: 30px;
+  text-align: center;
+  background-color: red; /* 浏览器不支持时显示 */
+  background-image: linear-gradient(#e8198b, #0eb4dd);
+}
+ 
+.header h1 {
+  font-size: 50px;
+}
+ 
+/* 导航条 */
+.topnav {
+  overflow: hidden;
+  background-color: rgb(92, 92, 92);
+}
+ 
+/* 导航条链接 */
+.topnav a {
+  float: left;
+  display: block;
+  color: #f2f2f2;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+}
+ 
+/* 链接颜色修改 */
+.topnav a:hover {
+  background-color: #ddd;
+  color: black;
+}
+ 
+/* 创建两列 */
+/* Left column */
+.leftcolumn {   
+  float: left;
+  width: 75%;
+}
+ 
+/* 右侧栏 */
+.rightcolumn {
+  float: left;
+  width: 25%;
+  background-color: #333;
+  padding-left: 20px;
+}
+ 
+/* 图像部分 */
+.fakeimg {
+  background-color: #aaa;
+  width: 100%;
+  padding: 20px;
+}
+ 
+/* 文章卡片效果 */
+.card {
+  background-color: white;
+  padding: 20px;
+  margin-top: 20px;
+}
+
+.card2{
+  background-color:rgb(30, 30, 30);
+  color:#f1f1f1;
+  padding: 20px;
+  margin-top: 20px;
+}
+
+/* 列后面清除浮动 */
+.row:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+ 
+/* 底部 */
+.footer {
+  padding: 20px;
+  text-align: center;
+  background: #ddd;
+  margin-top: 20px;
+}
+ 
+@media screen and (max-width: 800px) {
+  .leftcolumn, .rightcolumn {   
+    width: 100%;
+    padding: 0;
+  }
+}
+ 
+@media screen and (max-width: 400px) {
+  .topnav a {
+    float: none;
+    width: 100%;
+  }
+}
+a{ 
+text-decoration:none
+}
+.avatar-img {
+    overflow: hidden;
+    margin: 0 auto;
+    width: 110px;
+    height: 110px;
+    border-radius: 70px;
+}
+.avatar-img img {
+    width: 100%;
+    height: 100%;
+    -webkit-transition: filter 375ms ease-in 0.2s, -webkit-transform 0.3s;
+    -moz-transition: filter 375ms ease-in 0.2s, -moz-transform 0.3s;
+    -o-transition: filter 375ms ease-in 0.2s, -o-transform 0.3s;
+    -ms-transition: filter 375ms ease-in 0.2s, -ms-transform 0.3s;
+    transition: filter 375ms ease-in 0.2s, transform 0.3s;
+    object-fit: cover;
+}
+</style>
+<script>
+    var ch1;
+    var ch2;
+  var Ps="";
+  var Username="";
+  var article=0;
+function helpc()
+{
+  alert("Welcome!This website is a Personal website.");
+}
+function g()
+{
+  alert("个人页面的点赞数:"+article);
+}
+function hren()
+{
+  window.open("news.html", "_blank");
+}
+function qd()
+{
+  Ps+=document.getElementById('inp1').value;
+  document.getElementById('ch1').innerHTML=Ps;
+}
+function cx()
+{
+  Ps="";
+  document.getElementById('ch1').innerHTML=Ps;
+}
+function ch()
+{
+    ch1++;
+    if(ch1==1)document.getElementById('jl').innerHTML="你好呀ITX！ヾ(≧▽≦*)o";
+    else if(ch1==2)document.getElementById('jl').innerHTML="害怕...＞︿＜";
+    else if(ch1==3)document.getElementById('jl').innerHTML="喂，妖妖灵吗？这里有坏人嗷";
+    else 
+    {
+        document.getElementById('jl').innerHTML="嗷~咬你";
+        ch1=0;
+    }
+}
+function chx()
+{
+    ch2++;
+    if(ch2==1)document.getElementById('jl').innerHTML="喵喵喵？";
+    else if(ch2==2)document.getElementById('jl').innerHTML="你在干什么呀？";
+    else if(ch2==3)document.getElementById('jl').innerHTML="我要生气了哦o((>ω< ))o";
+    else 
+    {
+        document.getElementById('jl').innerHTML="快把鼠标拿开~";
+        ch2=0;
+    }
+}
+</script>
+</head>
+<body>
+<div class="header">
+  <h1 id="h1">ITX Personal website</h1>
+  <h4 id="ch1"></h4>
+  <marquee id="marq"direction="left">Welcome to ITX Personal website!</marquee>
+</div>
+
+<div class="topnav">
+  <a href="MSI.html">首页/Home Page</a>
+  <a onclick="g()">点赞查看/Num of likes</a>
+  <a onclick="helpc()" style="float:right">Help</a>
+</div>
+
+<div class="row">
+  <div class="leftcolumn">
+    <div class="card">
+      <div><h2>IT行业未来趋势总结</h2><button style="font-size:15px"><i class="fa fa-bell" onclick="article++;alert('点赞成功');"></i></button></div>
+      <h5>2022 年 5 月 14日</h5>
+      <div class="fakeimg" style="height:200px;"><img  src="IT.webp"height="180px" width="270px"></div>
+      <p>一、IT行业概况</p>
+      <p>当今世界，信息技术日新月异，正在有力地推动着社会生产力的发展。一是微电子技术的高速发展，导致芯片的运算能力及性能价格比继续按几何级数的定律增长，从而为大规模、多领域的数字化信息的加工处理、传递交流创造了条件；二是软件技术的高速发展，使芯片和计算机硬件具有了智能，从而成倍地扩大了计算机技术的功能和应用范围；三是在微电子、软件和激光三大技术的推动下，通信技术加快了从模拟向数字、从低速向高速、从单一语言媒体向多媒体的转变；四是计算机、通信与媒体技术的相互渗透与融合，正在将通信与信息技术的发展推向一个崭新的阶段。</p>
+      <p>以ip技术为特征的新一代公用信息网将在不断演进中迅速发展，成为下一代信息服务网的统一平台。基于该网络上的电子商务、远程教育、远程诊疗、电子政府、移动办公和家庭办公等计算机互联网的新应用不断涌现并得到大力发展。信息技术日益广泛地深入社会生产、生活的各个领域将使it产业在数字化革命大潮中，以更高的速度向前发展。</p>
+    </div>
+    <div class="card">
+      <div><h2>2022年C++编程技术行业趋势</h2><button style="font-size:15px"><i class="fa fa-bell"onclick="article++;alert('点赞成功');"></i></button></div>
+      <h5>2022 年 5 月 14日</h5>
+      <div class="fakeimg" style="height:200px;">图片</div>
+      <p>随着软件行业不断发展，各种编程语言百花齐放，ios、android、java等都是移动互联网时代比较流行的语言，从业者越来越多，但目前市场占有率最高的还是传统的C/C++，很多人跃跃欲试，但又对此了解不多，难免会迟疑，不知道现在学C++还能拿到年薪10万吗?就业怎么样?</p>
+      <b>值得一提的是，C++仍然广泛受到关注。</b>
+      <p>发展趋势</p>
+      <p>需要看到的是两个趋势，一个趋势是C++变得更加复杂，通过模板等有潜力的语法因素构造越来越精巧的库成为了现代C++的热点，虽然在利用库实现新的编程范式，乃至设计模式等方面很有开创意义，也确实产生了一些能够便捷开发的工具，但是更多的是把C++变得更加强大，更加复杂难懂，不得不说它正在向边缘化道路发展。</p>
+    </div>
+    <div class="card">
+        <div><h2>ASCII码讲解</h2><button style="font-size:15px"><i class="fa fa-bell"onclick="article++;alert('点赞成功');"></i></button></div>
+        <h5>2022 年 5 月 20日</h5>
+        <div class="fakeimg" style="height:200px;">图片</div>
+        <p>ASCII (American Standard Code for Information Interchange): 美国信息交换标准代码是基于拉丁字母的一套电脑编码系统，主要用于显示现代y英语和其他西欧语言。</p>
+        <p>它是最通用的信息交换标准，并等同于国际标准ISO/IEC 646。ASCII第一次以规范标准的类型发表是在1967年，最后一次更新则是在1986年，到目前为止共定义了128个字符。</p>
+        <p>在计算机中，所有的数据在存储和运算时都要使用二进制数表示（因为计算机用高电平和低电平分别表示1和0），例如，像a、b、c、d这样的52个字母（包括大写）以及0、1等数字还有一些常用的符号（例如*、#、@等）在计算机中存储时也要使用二进制数来表示，而具体用哪些二进制数字表示哪个符号，当然每个人都可以约定自己的一套（这就叫编码），而大家如果要想互相通信而不造成混乱，那么大家就必须使用相同的编码规则，于是美国有关的标准化组织就出台了ASCII编码，统一规定了上述常用符号用哪些二进制数来表示。美国信息交换标准代码是由美国国家标准学会(American National Standard Institute , ANSI )制定的，是一种标准的单字节字符编码方案，用于基于文本的数据。它最初是美国国家标准，供不同计算机在相互通信时用作共同遵守的西文字符编码标准，后来它被国际标准化组织（International Organization for Standardization, ISO）定为国际标准，称为ISO 646标准。适用于所有拉丁文字字母。</p>
+    </div>
+  </div>
+  <div class="rightcolumn">
+    <div class="card2">
+    <div class="avatar-img">
+      <img alt="avatar"src="c++.webp">
+    </div>
+    <center><h3>InterspaceITX</h3></center>
+    <center><h4>文章:3 新闻:0 游戏:0</h4></center>
+    </div>
+    <div class="card">
+        <center><h3>公告</h3></center>
+        <div class="fakeimg">
+            <center><a href="https://blog.csdn.net/InterspaceITX">CSDN:↓</a></center>
+            <center><a href="https://github.com/InterspaceITX">GitHub:↓</a></center>
+            <center><a>WX:davidtianyou</a></center>
+            <center><a>邮箱:daviduu@126.com</a></center>
+        </div>
+        <center><p>Ctrl+D试试</p></center>
+    </div>
+    <div class="card">
+        <marquee style="color:rgb(62, 30, 150)"direction="left">
+            你是世间游离的精灵 我是代代守护你的神明
+        </marquee>
+    </div>
+    <div class="card">
+      <h3>热门文章</h3>
+      <div class="fakeimg"><p>IT行业未来趋势总结</p>
+      <p>2022年C++编程技术行业趋势</p></div>
+    </div>
+    <div class="card">
+        <div id="jl"onmouseover="ch()" onclick="chx()">hi!</div>
+    </div>
+    <div class="card">
+      <h3>关注我</h3>
+      <a  id="ahc" href="https://blog.csdn.net/InterspaceITX">CSDN:InterspaceITX</a>
+      <div>
+      <input id="inp1" type="text" name="个性签名" placeholder="个性签名" style="float:left">
+      <button onclick="qd()">确定</button>
+      <button onclick="cx()">撤销</button></div>
+    </div>
+    <div class="card">
+    <h3>Time:</h3>
+    <h3 id="time1"></h3>
+    <iframe name="weather_inc" 
+	src="http://i.tianqi.com/index.php?c=code&id=7" 
+	style="border:solid 1px #7ec8ea" 
+	width="250" height="100" frameborder="0" 
+	marginwidth="0" marginheight="0" scrolling="no">
+    </iframe>
+    <script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
+    </div>
+  </div>
+</div>
+
+<div class="footer">
+  <center><div>e-mail:daviduu@126.com</div></center>
+  <center><div>版权所有:ITX</div></center>
+</div>
+<script>
+    function mytime(){
+        var a = new Date();
+        var b = a.toLocaleTimeString();
+        var c = a.toLocaleDateString();
+        document.getElementById("time1").innerHTML = c+"&nbsp"+b;
+        }
+    setInterval(function() {mytime()},1000);
+</script>
+</body>
+</html>
