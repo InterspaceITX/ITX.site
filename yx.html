@@ -155,10 +155,6 @@ function g()
 {
   alert("个人页面的点赞数:"+article);
 }
-function hren()
-{
-  window.open("news.html", "_blank");
-}
 function qd()
 {
   Ps+=document.getElementById('inp1').value;
@@ -205,8 +201,6 @@ function chx()
 <div class="topnav">
   <a href="MSI.html">首页/Home Page</a>
   <a onclick="g()">点赞查看/Num of likes</a>
-  <a onclick="hren()">新闻/News</a>
-  <a onclick="window.location.href='Login.html'">Logout</a>
   <a onclick="helpc()" style="float:right">Help</a>
 </div>
 
@@ -230,8 +224,8 @@ function chx()
     <div class="avatar-img">
       <img alt="avatar"src="c++.webp">
     </div>
-    <center><h3>InterspaceITX</h3></center>
-    <center><h4>文章:3 新闻:0 游戏:0</h4></center>
+      <center><h4>文章:3 新闻:0</h4></center>
+      <center><a href="https://InterspaceITX.github.io/InterspaceITX.site/yx.html">游戏:3</a></center>
     </div>
     <div class="card">
         <center><h3>公告</h3></center>
@@ -259,10 +253,6 @@ function chx()
     <div class="card">
       <h3>关注我</h3>
       <a  id="ahc" href="https://blog.csdn.net/InterspaceITX">CSDN:InterspaceITX</a>
-      <div>
-      <input id="inp1" type="text" name="个性签名" placeholder="个性签名" style="float:left">
-      <button onclick="qd()">确定</button>
-      <button onclick="cx()">撤销</button></div>
     </div>
     <div class="card">
     <h3>Time:</h3>
