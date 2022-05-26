@@ -30,13 +30,9 @@
 	var c=document.getElementById("canvas");
     var ctx=c.getContext("2d");
     var snake =[];//定义一条蛇，画蛇的身体
-    var snakeCount = 50;//初始化蛇的长度
+    var snakeCount = 5;//初始化蛇的长度
 	var foodx =0;
 	var foody =0;
-	var foodx1 =0;
-	var foody1 =0;
-    var foodx2 =0;
-	var foody2 =0;
     var togo =0;
     function drawtable()//画地图的函数
     {
@@ -73,10 +69,6 @@
     		ctx.fillStyle ="black";
 	     ctx.fillRect(foodx,foody,15,15);
 	     ctx.fill();
-         ctx.fillRect(foodx1,foody1,15,15);
-	     ctx.fill();
-         ctx.fillRect(foodx2,foody2,15,15);
-	     ctx.fill();
     	
     }
  
@@ -92,8 +84,6 @@
 			
 		  drawtable();
           addfood();//在start中调用添加食物函数
-          addfood1();
-          addfood2();
     }
  
     function addfood()
@@ -108,33 +98,7 @@
 			addfood();
 			}
 		}
-	}	
-    function addfood1()
-	{
-	foodx1 = Math.floor(Math.random()*60)*15; //随机产生一个0-1之间的数
-	foody1 = Math.floor(Math.random()*40)*15;
-		
-		for (var k=0;k<snake;k++)
-		{
-            if (foodx1==snake[k].x&&foody1==sanke[k].y)//防止产生的随机食物落在蛇身上
-			{	
-			addfood1();
-			}
-		}
-	}   
-    function addfood2()
-	{
-	foodx2 = Math.floor(Math.random()*60)*15; //随机产生一个0-1之间的数
-	foody2 = Math.floor(Math.random()*40)*15;
-		
-		for (var k=0;k<snake;k++)
-		{
-            if (foodx2==snake[k].x&&foody2==sanke[k].y)//防止产生的随机食物落在蛇身上
-			{	
-			addfood1();
-			}
-		}
-	}    		
+	}	   		
    function move()
    {
 	switch (togo)
@@ -170,24 +134,6 @@
     if(snake[snakeCount-1].x==foodx&&snake[snakeCount-1].y==foody)
    {
 		addfood();
-		snakeCount+=1;
-		snake.unshift({x:-15,y:-15});
-   }
-   if(snake[snakeCount-1].x==foodx1&&snake[snakeCount-1].y==foody1)
-   {
-		addfood1();
-		snakeCount+=1;
-		snake.unshift({x:-15,y:-15});
-   }
-   if(snake[snakeCount-1].x==foodx2&&snake[snakeCount-1].y==foody2)
-   {
-		addfood2();
-		snakeCount+=1;
-		snake.unshift({x:-15,y:-15});
-   }
-   if(snake[snakeCount-1].x==foodx3&&snake[snakeCount-1].y==foody3)
-   {
-		addfood3();
 		snakeCount+=1;
 		snake.unshift({x:-15,y:-15});
    }
