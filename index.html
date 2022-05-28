@@ -214,8 +214,6 @@ function f()
   content=document.getElementById('content').value;
   localStorage.setItem("n",name);
   localStorage.setItem("c",content);
-  document.getElementById('np').innerHTML=localStorage.getItem("n");
-  document.getElementById('ct').innerHTML=localStorage.getItem("c");
 }
 </script>
 </head>
@@ -344,7 +342,7 @@ function f()
   </div>
 </div>
 <div class="card">
-  <div id="np"></div>
+  <h3 id="np"></h3>
   <div id="ct"></div>
   <input id="name" type="text" placeholder="name">
   <input id="content" type="text" placeholder="内容">
@@ -362,6 +360,10 @@ function f()
         document.getElementById("time1").innerHTML = c+"&nbsp"+b;
         }
     setInterval(function() {myt()},1000);
+    setInterval(function(){
+    document.getElementById('np').innerHTML=localStorage.getItem("n");
+    document.getElementById('ct').innerHTML=localStorage.getItem("c");
+    });
 </script>
 </body>
 </html>
