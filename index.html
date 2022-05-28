@@ -208,6 +208,15 @@ function chx()
         ch2=0;
     }
 }
+function f()
+{
+  name=document.getElementById('name').value;
+  content=document.getElementById('content').value;
+  localStorage.setItem("n",name);
+  localStorage.setItem("c",content);
+  document.getElementById('np').innerHTML=localStorage.getItem("n");
+  document.getElementById('ct').innerHTML=localStorage.getItem("c");
+}
 </script>
 </head>
 <body>
@@ -334,7 +343,13 @@ function chx()
     </div>
   </div>
 </div>
-
+<div class="card">
+  <div id="np"></div>
+  <div id="ct"></div>
+  <input id="name" type="text" placeholder="name">
+  <input id="content" type="text" placeholder="内容">
+  <button onclick="f()">发送</button>
+</div>
 <div class="footer">
   <center><div>e-mail:daviduu@126.com</div></center>
   <center><div>版权所有:ITX</div></center>
