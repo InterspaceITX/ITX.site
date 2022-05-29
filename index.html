@@ -360,17 +360,10 @@ function f()
         document.getElementById("time1").innerHTML = c+"&nbsp"+b;
         }
     setInterval(function() {myt()},1000);
-    setInterval(function() {mytime()},1000);
     setInterval(function(){
     document.getElementById('np').innerHTML=localStorage.getItem("n");
     document.getElementById('ct').innerHTML=localStorage.getItem("c");
-    const data = content;
-    window.frames[0].postMessage(data,'https://interspaceitx.github.io/InterspaceITX.site/');
     });
-    window.addEventListener('message', function(ev) {
-    var data = ev.data;
-    content=data;
-    }, false);
 </script>
 </body>
 </html>
