@@ -215,6 +215,27 @@ function f()
   localStorage.setItem("n",name);
   localStorage.setItem("c",content);
 }
+function Music()
+{
+  if(xcoin>=5){
+  xcoin-=5;
+  localStorage.setItem("coin",xcoin);
+  document.getElementById('coin').innerHTML="星币:"+localStorage.getItem("coin");
+  var audio = new Audio('亡灵序曲.mp3');
+  audio.play();
+  }
+  else alert("星币不足！");
+}
+function Music2()
+{
+  if(xcoin>=5){
+  xcoin-=5;
+  document.getElementById('coin').innerHTML="星币:"+localStorage.getItem("coin");
+  var audio = new Audio('RISE.mp3');
+  audio.play();
+  }
+  else alert("星币不足！");
+}
 </script>
 </head>
 <body>
@@ -228,7 +249,8 @@ function f()
 <div class="topnav">
   <a href="https://InterspaceITX.github.io/InterspaceITX.site">首页/Home Page</a>
   <a onclick="g()">点赞查看/Num of likes</a>
-  <a onclick="helpc()" style="float:right">Help</a>
+  <a id="coin">星币:0</a>
+  <a style="float:right;">Visiter</a>
 </div>
 
 <div class="row">
@@ -239,7 +261,7 @@ function f()
       </div>
       <center><h3>InterspaceITX</h3></center>
       <center><h4>文章:3 新闻:0</h4></center>
-      <center><a href="https://InterspaceITX.github.io/InterspaceITX.site/yx.html">游戏:3</a></center>
+      <center><a href="https://InterspaceITX.github.io/InterspaceITX.site/yx.html">游戏:6</a></center>
       </div>
     <div class="card">
         <center><h3>公告</h3></center>
@@ -321,14 +343,8 @@ function f()
     </div>
     <div class="card">
       <h3>Music station</h3>
-      <h4>亡灵序曲</h4>
-      <audio controls>
-        <source src="https://InterspaceITX.github.io/InterspaceITX.site/亡灵序曲.mp3">
-      </audio>
-      <h4>RISE</h4>
-      <audio controls>
-        <source src="https://InterspaceITX.github.io/InterspaceITX.site/RISE.mp3">
-      </audio>
+      <h4 onclick="Music()">亡灵序曲>></h4>
+      <h4 onclick="Music2()">RISE>></h4>
     </div>
     <div class="card">
       <h2>导航</h2>
@@ -363,7 +379,12 @@ function f()
     setInterval(function(){
     document.getElementById('np').innerHTML=localStorage.getItem("n");
     document.getElementById('ct').innerHTML=localStorage.getItem("c");
+    localStorage.setItem("coin",xcoin);
     });
+    setInterval(function(){
+      xcoin++;
+      document.getElementById('coin').innerHTML="星币："+localStorage.getItem("coin");
+    },5000);
 </script>
 </body>
 </html>
