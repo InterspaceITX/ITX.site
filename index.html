@@ -215,27 +215,6 @@ function f()
   localStorage.setItem("n",name);
   localStorage.setItem("c",content);
 }
-function Music()
-{
-  if(xcoin>=5){
-  xcoin-=5;
-  localStorage.setItem("coin",xcoin);
-  document.getElementById('coin').innerHTML="星币:"+localStorage.getItem("coin");
-  var audio = new Audio('亡灵序曲.mp3');
-  audio.play();
-  }
-  else alert("星币不足！");
-}
-function Music2()
-{
-  if(xcoin>=5){
-  xcoin-=5;
-  document.getElementById('coin').innerHTML="星币:"+localStorage.getItem("coin");
-  var audio = new Audio('RISE.mp3');
-  audio.play();
-  }
-  else alert("星币不足！");
-}
 </script>
 </head>
 <body>
@@ -383,7 +362,7 @@ function Music2()
     });
     setInterval(function(){
       xcoin++;
-      document.getElementById('coin').innerHTML="星币："+localStorage.getItem("coin");
+      document.getElementById('coin').innerHTML="星币:"+localStorage.getItem("coin");
     },5000);
 </script>
 </body>
