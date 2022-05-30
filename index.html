@@ -17,17 +17,19 @@ body {
   background: #333;
 }
 
-h1
+.h2
 {
-	text-shadow: 10px 10px 10px rgb(0,0,0);
+	background-color: #333;
+  color: #f1f1f1;
 }
 
 /* 头部标题 */
 .header {
-  padding: 30px;
+  padding: 330px;
+  background-image: url("h.webp");
+  background-size: 100%;
   text-align: center;
-  background-color: red; /* 浏览器不支持时显示 */
-  background-image: linear-gradient(#e8198b, #0eb4dd);
+  background-repeat: no-repeat;
 }
  
 .header h1 {
@@ -220,10 +222,11 @@ function f()
 </head>
 <body>
 <script src="CL.js"></script>
+<h2 class="h2">InterspaceITX</h2>
 <div class="header">
-  <h1 id="h1">ITX Personal website</h1>
-  <h4 id="ch1"></h4>
-  <marquee id="marq"direction="left">Welcome to ITX Personal website!</marquee>
+  <h1 id="h1">InterspaceITX</h1>
+  <div id="typing" style="font-size:20px;">
+  </div>
 </div>
 
 <div class="topnav">
@@ -371,6 +374,16 @@ function f()
       xcoin++;
       document.getElementById('coin').innerHTML="星币:"+localStorage.getItem("coin");
     },5000);
+setInterval(function(){
+      if(c==21)c=0;
+      st="";
+      for (var i=0;i<c;i++)
+      {
+        st+=str[i];
+      }
+      document.getElementById('typing').innerHTML=st+"|";
+      c++;
+    },200);
 </script>
 </body>
 </html>
