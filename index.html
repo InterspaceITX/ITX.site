@@ -232,7 +232,6 @@ function f()
 <div class="topnav">
   <a href="https://InterspaceITX.github.io/InterspaceITX.site">首页/Home Page</a>
   <a onclick="g()">点赞查看/Num of likes</a>
-  <a id="coin">星币:0</a>
   <a style="float:right;">Visiter</a>
 </div>
 
@@ -375,6 +374,19 @@ function f()
       document.getElementById('coin').innerHTML="星币:"+localStorage.getItem("coin");
     },5000);
 setInterval(function(){
+      if(c==21)c=0;
+      st="";
+      for (var i=0;i<c;i++)
+      {
+        st+=str[i];
+      }
+      document.getElementById('typing').innerHTML=st+"|";
+      c++;
+    },200);
+    var c=0;
+    var str="你是世间游离的精灵 我是代代守护你的神明";
+    var st="";
+    setInterval(function(){
       if(c==21)c=0;
       st="";
       for (var i=0;i<c;i++)
